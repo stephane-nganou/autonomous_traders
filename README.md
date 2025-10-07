@@ -1,1 +1,1 @@
-Autonomous Trading plattform using 4 Agents. We use MCP in it this projects and the Agents are allowed to change strategies based on the market trend.
+Autonomous Trading plattform using 4 Agents. We use MCP services in it this projects and the Agents are allowed to change strategies based on the market trend.
