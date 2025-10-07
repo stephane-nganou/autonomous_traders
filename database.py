@@ -104,7 +104,7 @@ def write_market(date:str, data: dict):
         )
         connection.commit()
 
-def reaad_market(date:str) -> dict | None:
+def read_market(date:str) -> dict | None:
     with sqlite3.connect(DATABASE) as connection:
         cursor = connection.cursor()
         cursor.execute(
