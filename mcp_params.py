@@ -25,7 +25,7 @@ trader_mcp_server_params = [
 ]
 
 # The full set of MCP servers for the researcher: Fetch, Brave Search and Memory
-def researcher_mcp_server_params_for(name: str) -> list:
+def researcher_mcp_server_params(name: str) -> list:
     return [
         {"command": "uvx", "args": ["mcp-server-fetch"]},
         {
