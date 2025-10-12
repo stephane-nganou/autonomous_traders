@@ -22,8 +22,6 @@ deepseek_api_key = os.getenv("DEEPSEEK_API_KEY")
 google_api_key = os.getenv("GOOGLE_API_KEY")
 grok_api_key = os.getenv("GROK_API_KEY")
 openrouter_api_key = os.getenv("OPENROUTER_API_KEY")
-TRADER_NAME = os.getenv("TRADER_NAME", "")
-TRADER_MODEL_NAME:str = os.getenv("TRADER_MODEL_NAME", "")
 
 DEEPSEEK_BASE_URL = "https://api.deepseek.com/v1"
 GROK_BASE_URL = "https://api.x.ai/v1"
@@ -65,11 +63,11 @@ async def get_researcher_tool(mcp_servers, model_name) -> Tool:
     return researcher.as_tool(tool_name=RESEARCHER_NAME, tool_description=research_tool())
 
 class Trader:
-    def __init__(self, name:str):
+    def __init__(self, name:str, trader_name:str, trader_model_name:str):
         self.name = name
-        self.lastname = TRADER_NAME
+        self.lastname = trader_name
         self.agent = None
-        self.model_name = TRADER_MODEL_NAME
+        self.model_name = trader_model_name
         self.do_trade = True
 
     async def create_agent(self, trader_mcp_servers, researcher_mcp_servers) -> Agent:
