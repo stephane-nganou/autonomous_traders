@@ -33,8 +33,10 @@ if USE_MANY_MODELS:
         gemini_model_name,
         grok_model_name
     ]
+    short_model_names = [gpt_model_short_name, deepseek_model_short_name, gemini_model_short_name, grok_model_short_name]
 else:
     model_names = [gpt_model_name] * 4
+    short_model_names = [gpt_model_short_name] * 4
 
 
 def create_traders() -> List[Trader]:
